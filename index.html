@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AMM Taxi Frankfurt - Ihr zuverlässiger Partner für Krankenfahrten, Schulkinder, Business-Transfers und mehr. Seit 1982 in Frankfurt am Main.">
+    <title>AMM Taxi Frankfurt | Ihr zuverlässiger Fahrdienst seit 1982</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+    
+    <!-- Combined Header with Logo, Nav & Phone -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+                <!-- Logo -->
+                <a href="#" class="top-logo" aria-label="AMM Taxi Frankfurt Startseite">
+                    <img src="images/logo.png" alt="AMM Taxi Frankfurt Logo" class="top-logo-img">
+                </a>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
+                    <li role="none"><a href="#services" class="nav-link" role="menuitem">Leistungen</a></li>
+                    <li role="none"><a href="#about" class="nav-link" role="menuitem">Über uns</a></li>
+                    <li role="none"><a href="#order" class="nav-link nav-link-highlight" role="menuitem">
+                        <i class="fas fa-taxi" aria-hidden="true"></i> Taxi bestellen
+                    </a></li>
+                    <li role="none"><a href="#contact" class="nav-link" role="menuitem">Kontakt</a></li>
+                </ul>
+                
+                <!-- Phone Button -->
+                <div class="header-phone">
+                    <a href="tel:+496990470845" aria-label="Rufen Sie uns an: 069 90 47 08 45">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        069 90 47 08 45
+                    </a>
+                </div>
+                
+                <!-- Mobile Toggle -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <!-- Hero Section with Image Slider -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <!-- Image Slider -->
+            <div class="hero-slider" id="heroSlider">
+                <div class="hero-slide active">
+                    <img src="images/slider-1.jpg" alt="Unsere moderne Taxi-Flotte in Frankfurt">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-badge">Modern & Zuverlässig</span>
+                        <h2 class="hero-slide-title">Ihre Fahrt,<br>unser Versprechen</h2>
+                        <a href="#order" class="btn btn-primary btn-large">Jetzt bestellen</a>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="images/slider-2.jpg" alt="Frankfurt Skyline mit Taxi">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-badge">Seit 1982 in Frankfurt</span>
+                        <h2 class="hero-slide-title">42 Jahre<br>Erfahrung</h2>
+                        <a href="#about" class="btn btn-primary btn-large">Mehr erfahren</a>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="images/slider-3.jpg" alt="Freundlicher Service für alle">
+                    <div class="hero-slide-overlay"></div>
+                    <div class="hero-slide-content">
+                        <span class="hero-slide-badge">Mit Herz & Verstand</span>
+                        <h2 class="hero-slide-title">Fürsorglich<br>& Kompetent</h2>
+                        <a href="#services" class="btn btn-primary btn-large">Unsere Leistungen</a>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls -->
+                <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Vorheriges Bild">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn slider-next" id="sliderNext" aria-label="Nächstes Bild">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Slider Dots -->
+                <div class="slider-dots">
+                    <button class="slider-dot active" data-slide="0" aria-label="Bild 1"></button>
+                    <button class="slider-dot" data-slide="1" aria-label="Bild 2"></button>
+                    <button class="slider-dot" data-slide="2" aria-label="Bild 3"></button>
+                </div>
+            </div>
+            
+            <!-- Hero Stats Bar -->
+            <div class="hero-stats-bar" data-animate="fade-up">
+                <div class="container">
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">
+                                <span class="stat-number" data-count="42">0</span>
+                                <span class="stat-suffix">+</span>
+                            </div>
+                            <span class="stat-label">Jahre Erfahrung</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">
+                                <span class="stat-number" data-count="365">0</span>
+                            </div>
+                            <span class="stat-label">Tage im Jahr</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">
+                                <span class="stat-number" data-count="2500">0</span>
+                                <span class="stat-suffix">+</span>
+                            </div>
+                            <span class="stat-label">zufriedene Kunden</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Taxi Order Section with GPS -->
+        <section class="order-section" id="order" aria-labelledby="order-title">
+            <div class="container">
+                <div class="order-wrapper">
+                    <div class="order-content" data-animate="fade-right">
+                        <span class="section-badge">
+                            <i class="fas fa-taxi" aria-hidden="true"></i>
+                            Schnell & einfach
+                        </span>
+                        <h2 class="section-title" id="order-title">
+                            Taxi in <span class="text-highlight">2 Minuten</span> bestellen
+                        </h2>
+                        <p class="section-text">
+                            Geben Sie einfach Ihren Standort ein oder nutzen Sie die GPS-Erkennung. 
+                            Wir finden Sie und schicken das nächste Taxi zu Ihnen.
+                        </p>
+                        
+                        <div class="order-features">
+                            <div class="order-feature">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>GPS-Standortermittlung</span>
+                            </div>
+                            <div class="order-feature">
+                                <i class="fas fa-bolt" aria-hidden="true"></i>
+                                <span>Durchschnittlich 5 Min. Wartezeit</span>
+                            </div>
+                            <div class="order-feature">
+                                <i class="fas fa-euro-sign" aria-hidden="true"></i>
+                                <span>Feste Preise möglich</span>
+                            </div>
+                        </div>
+                        
+                        <!-- App Download -->
+                        <div class="app-download" data-animate="fade-up">
+                            <p class="app-download-text">Oder laden Sie unsere App herunter:</p>
+                            <div class="app-buttons">
+                                <a href="#" class="app-button" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-apple" aria-hidden="true"></i>
+                                    <div class="app-button-text">
+                                        <span>Download on the</span>
+                                        <strong>App Store</strong>
+                                    </div>
+                                </a>
+                                <a href="#" class="app-button" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-google-play" aria-hidden="true"></i>
+                                    <div class="app-button-text">
+                                        <span>Get it on</span>
+                                        <strong>Google Play</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-form-wrapper" data-animate="fade-left">
+                        <form class="order-form" id="taxiOrderForm" action="order.php" method="POST">
+                            <div class="form-header">
+                                <i class="fas fa-taxi" aria-hidden="true"></i>
+                                <h3>Taxi bestellen</h3>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pickup" class="form-label">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    Abholadresse
+                                </label>
+                                <div class="input-with-button">
+                                    <input 
+                                        type="text" 
+                                        id="pickup" 
+                                        name="pickup" 
+                                        class="form-input" 
+                                        placeholder="Ihre Adresse eingeben..."
+                                        required
+                                        autocomplete="street-address"
+                                    >
+                                    <button 
+                                        type="button" 
+                                        class="btn-gps" 
+                                        id="gpsButton"
+                                        aria-label="Meinen Standort automatisch ermitteln"
+                                        title="Meinen Standort finden"
+                                    >
+                                        <i class="fas fa-location-arrow" aria-hidden="true"></i>
+                                        <span class="gps-text">GPS</span>
+                                    </button>
+                                </div>
+                                <div class="gps-status" id="gpsStatus" role="status" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="destination" class="form-label">
+                                    <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                                    Zieladresse
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="destination" 
+                                    name="destination" 
+                                    class="form-input" 
+                                    placeholder="Wohin soll es gehen?"
+                                    required
+                                    autocomplete="off"
+                                >
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group form-group-half">
+                                    <label for="datetime" class="form-label">
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                                        Wann?
+                                    </label>
+                                    <select id="datetime" name="datetime" class="form-select">
+                                        <option value="now">Sofort</option>
+                                        <option value="15min">In 15 Minuten</option>
+                                        <option value="30min">In 30 Minuten</option>
+                                        <option value="1h">In 1 Stunde</option>
+                                        <option value="custom">Anderes Datum</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group form-group-half">
+                                    <label for="passengers" class="form-label">
+                                        <i class="fas fa-users" aria-hidden="true"></i>
+                                        Personen
+                                    </label>
+                                    <select id="passengers" name="passengers" class="form-select">
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 Personen</option>
+                                        <option value="3">3 Personen</option>
+                                        <option value="4">4 Personen</option>
+                                        <option value="5">5+ Personen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                                    Besondere Anforderungen
+                                </label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="wheelchair" value="1">
+                                        <span class="checkbox-custom"></span>
+                                        <span>Rollstuhlgerecht</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="childseat" value="1">
+                                        <span class="checkbox-custom"></span>
+                                        <span>Kindersitz</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="companion" value="1">
+                                        <span class="checkbox-custom"></span>
+                                        <span>Begleitung nötig</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    Telefonnummer
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    class="form-input" 
+                                    placeholder="+49 123 456789"
+                                    required
+                                    autocomplete="tel"
+                                >
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full btn-large">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                Taxi jetzt bestellen
+                            </button>
+                            
+                            <p class="form-note">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                Sie erhalten eine Bestätigung per SMS
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-badge">
+                        <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                        Unsere Leistungen
+                    </span>
+                    <h2 class="section-title" id="services-title">
+                        Für jede Situation der <span class="text-highlight">passende Service</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Ob Krankenfahrt, Schultransport oder Geschäftsreise – 
+                        wir sind für Sie da. Mit Herz und Verstand.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1: Krankenfahrten -->
+                    <article class="service-card" data-animate="fade-up" data-delay="0">
+                        <div class="service-image">
+                            <img src="images/service-medical.jpg" alt="Krankenfahrt Service - Patient im Rollstuhl wird begleitet" loading="lazy">
+                            <div class="service-overlay"></div>
+                            <div class="service-icon">
+                                <i class="fas fa-hospital" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Krankenfahrten</h3>
+                            <p class="service-text">
+                                Regelmäßige Fahrten zum Arzt, ins Krankenhaus oder zur Therapie. 
+                                Behindertengerecht und stets pünktlich.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Dialyse, Reha, Chemo</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Abrechnung mit allen Kassen</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Rollstuhlgerechte Fahrzeuge</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Geduldige Begleitung</li>
+                            </ul>
+                            <a href="#order" class="service-link">
+                                <span>Anfragen</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Service 2: Schulkinder -->
+                    <article class="service-card" data-animate="fade-up" data-delay="100">
+                        <div class="service-image">
+                            <img src="images/service-school.jpg" alt="Schulkinder werden sicher zum Schulbus begleitet" loading="lazy">
+                            <div class="service-overlay"></div>
+                            <div class="service-icon">
+                                <i class="fas fa-school" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Schulkinder</h3>
+                            <p class="service-text">
+                                Sicherer Transport von Kindergarten bis Schule. 
+                                Auch für Kinder mit besonderem Förderbedarf.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Zuverlässige Abholung</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Geprüfte Fahrer</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Besonderer Förderbedarf</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Eltern-Information</li>
+                            </ul>
+                            <a href="#order" class="service-link">
+                                <span>Anfragen</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Service 3: Business -->
+                    <article class="service-card" data-animate="fade-up" data-delay="200">
+                        <div class="service-image">
+                            <img src="images/service-business.jpg" alt="Business Transfer - Geschäftsmann wird begrüßt" loading="lazy">
+                            <div class="service-overlay"></div>
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Business & Arbeitnehmer</h3>
+                            <p class="service-text">
+                                Pünktliche Fahrten zu Terminen, Meetings oder zum Flughafen. 
+                                Ihr Mitarbeiter kommt immer rechtzeitig an.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Flughafentransfer</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Termintreue garantiert</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Rechnungstellung</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Firmenkunden-Preise</li>
+                            </ul>
+                            <a href="#order" class="service-link">
+                                <span>Anfragen</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Service 4: Tagespflege -->
+                    <article class="service-card" data-animate="fade-up" data-delay="300">
+                        <div class="service-image">
+                            <img src="images/service-senior.jpg" alt="Senioren werden in Tagespflege abgeholt" loading="lazy">
+                            <div class="service-overlay"></div>
+                            <div class="service-icon">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Tagespflege & Senioren</h3>
+                            <p class="service-text">
+                                Fürsorgliche Begleitung zur Tagespflege oder zu Terminen. 
+                                Mit Geduld und Verständnis für Demenz, Parkinson & Co.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Tägliche Fahrten</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Rollstuhl & Rollator</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Demenz-erfahren</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Bis zur Tür begleitet</li>
+                            </ul>
+                            <a href="#order" class="service-link">
+                                <span>Anfragen</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Service 5: Shuttle -->
+                    <article class="service-card service-card-wide" data-animate="fade-up" data-delay="400">
+                        <div class="service-image">
+                            <img src="images/service-shuttle.jpg" alt="Gruppen-Shuttle Service am Flughafen" loading="lazy">
+                            <div class="service-overlay"></div>
+                            <div class="service-icon">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Shuttle & Gruppenfahrten</h3>
+                            <p class="service-text">
+                                Perfekt für Events, Firmenausflüge oder Flughafentransfers für Gruppen. 
+                                Bis zu 8 Personen bequem und gemeinsam ans Ziel.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Bis zu 8 Personen</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Event-Shuttle</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Festpreis möglich</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Gepäcktransport</li>
+                            </ul>
+                            <a href="#order" class="service-link">
+                                <span>Anfragen</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cost Coverage / Beratung Section -->
+        <section class="beratung-section" id="beratung" aria-labelledby="beratung-title">
+            <div class="container">
+                <div class="beratung-wrapper">
+                    <div class="beratung-content" data-animate="fade-right">
+                        <span class="section-badge">
+                            <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                            Kostenübernahme
+                        </span>
+                        <h2 class="section-title" id="beratung-title">
+                            Wir helfen Ihnen bei der <span class="text-highlight">Beantragung</span>
+                        </h2>
+                        <p class="section-text">
+                            Viele Fahrten werden von Krankenkassen, Sozial- oder Jugendämtern übernommen – 
+                            wir kennen die Antragswege und unterstützen Sie gerne.
+                        </p>
+                        
+                        <div class="beratung-cards">
+                            <div class="beratung-card">
+                                <div class="beratung-card-icon">
+                                    <i class="fas fa-hospital" aria-hidden="true"></i>
+                                </div>
+                                <h3>Krankenfahrten</h3>
+                                <p>Krankenkassen übernehmen Fahrten zu Arztbesuchen, Therapien, Dialyse, Chemo und Reha – wir helfen mit der Abrechnung.</p>
+                            </div>
+                            
+                            <div class="beratung-card">
+                                <div class="beratung-card-icon">
+                                    <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                                </div>
+                                <h3>Behindertenfahrten</h3>
+                                <p>Das Sozialamt übernimmt Fahrten für Menschen mit Behinderung – wir beraten Sie kostenlos zu Ihren Möglichkeiten.</p>
+                            </div>
+                            
+                            <div class="beratung-card">
+                                <div class="beratung-card-icon">
+                                    <i class="fas fa-school" aria-hidden="true"></i>
+                                </div>
+                                <h3>Schulbeförderung</h3>
+                                <p>Das Jugendamt übernimmt Fahrten für Kinder mit besonderem Bedarf – wir kennen die Antragsformulare.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="beratung-cta">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                Kostenlose Beratung anfragen
+                            </a>
+                            <p class="beratung-note">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                Keine versteckten Kosten – transparent & fair
+                            </p>
+                        </div>
+                        
+                        <div class="beratung-links">
+                            <h4>Nützliche Links:</h4>
+                            <div class="beratung-links-grid">
+                                <a href="https://www.frankfurt.de" target="_blank" rel="noopener noreferrer" class="beratung-link">
+                                    <i class="fas fa-city" aria-hidden="true"></i>
+                                    <span>Städtische Angebote Frankfurt</span>
+                                </a>
+                                <a href="https://www.berta-karte.de" target="_blank" rel="noopener noreferrer" class="beratung-link">
+                                    <i class="fas fa-id-card" aria-hidden="true"></i>
+                                    <span>Berta-Karte Antragsformular</span>
+                                </a>
+                                <a href="https://www.aok.de" target="_blank" rel="noopener noreferrer" class="beratung-link">
+                                    <i class="fas fa-hospital" aria-hidden="true"></i>
+                                    <span>Krankenkassen-Infos</span>
+                                </a>
+                                <a href="https://www.frankfurt.de/soziales" target="_blank" rel="noopener noreferrer" class="beratung-link">
+                                    <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                                    <span>Sozialamt Frankfurt</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="beratung-image" data-animate="fade-left">
+                        <img src="images/beratung.jpg" alt="Persönliche Beratung zur Kostenübernahme" loading="lazy">
+                        <div class="beratung-badge">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                            <div>
+                                <strong>42 Jahre</strong>
+                                <span>Erfahrung mit Behörden</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div class="about-bg-pattern" aria-hidden="true"></div>
+            
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-content" data-animate="fade-right">
+                        <span class="section-badge">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            Über uns
+                        </span>
+                        <h2 class="section-title" id="about-title">
+                            Ein <span class="text-highlight">Familienunternehmen</span><br>
+                            mit Herz
+                        </h2>
+                        
+                        <div class="about-text">
+                            <p>
+                                Seit <strong>1982</strong> sind wir auf den Straßen des Rhein-Main-Gebietes unterwegs. 
+                                Der Familienbetrieb wird inzwischen in der <strong>zweiten Generation</strong> geführt.
+                            </p>
+                            <p>
+                                Wir sind Dienstleister – Zuverlässigkeit, Pünktlichkeit, ein hohes Maß an 
+                                Verantwortungsbewusstsein und ein <strong>freundlicher, persönlicher Umgang</strong> zeichnen uns aus.
+                            </p>
+                            <p>
+                                Wer mit A.M.M. Taxi fährt, ist immer ein <strong>Gast</strong> und wird sich auch so fühlen. 
+                                Unsere modernen Fahrzeuge sind 365 Tage, rund um die Uhr auf Tour.
+                            </p>
+                        </div>
+                        
+                        <div class="about-values">
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </div>
+                                <span>Herzlichkeit</span>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <span>Zuverlässigkeit</span>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-award" aria-hidden="true"></i>
+                                </div>
+                                <span>Professionalität</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Kontakt aufnehmen
+                        </a>
+                    </div>
+                    
+                    <div class="about-stats" data-animate="fade-left">
+                        <div class="stat-card">
+                            <span class="stat-card-number" data-count="42">0</span>
+                            <span class="stat-card-suffix">+</span>
+                            <span class="stat-card-label">Jahre Erfahrung</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card-number" data-count="15">0</span>
+                            <span class="stat-card-suffix">+</span>
+                            <span class="stat-card-label">Fahrzeuge</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card-number" data-count="2500">0</span>
+                            <span class="stat-card-suffix">+</span>
+                            <span class="stat-card-label">Zufriedene Kunden</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card-number" data-count="98">0</span>
+                            <span class="stat-card-suffix">%</span>
+                            <span class="stat-card-label">Pünktlichkeit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Drivers Section -->
+        <section class="drivers-section" id="drivers" aria-labelledby="drivers-title">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-badge">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        Unser Team
+                    </span>
+                    <h2 class="section-title" id="drivers-title">
+                        Lernen Sie unsere <span class="text-highlight">Fahrer</span> kennen
+                    </h2>
+                    <p class="section-subtitle">
+                        Unser Team besteht aus erfahrenen, freundlichen und zuverlässigen Fahrern, 
+                        die Ihre Sicherheit und Ihren Komfort an erste Stelle setzen.
+                    </p>
+                </div>
+                
+                <div class="drivers-slider-wrapper" data-animate="fade-up">
+                    <button class="drivers-slider-btn drivers-prev" id="driversPrev" aria-label="Vorherige Fahrer">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="drivers-slider" id="driversSlider">
+                        <div class="drivers-track">
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-1.jpg" alt="Mehmet Yilmaz - Taxifahrer" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Mehmet Yilmaz</h3>
+                                    <p class="driver-role">Senior Fahrer</p>
+                                    <p class="driver-bio">Seit 8 Jahren im Team. Spezialisiert auf Krankenfahrten und Seniorenbetreuung.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <span>4.9/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-2.jpg" alt="Susanne Müller - Taxifahrerin" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Susanne Müller</h3>
+                                    <p class="driver-role">Schultransport-Spezialistin</p>
+                                    <p class="driver-bio">5 Jahre Erfahrung im Schultransport. Geduldig und bei den Kindern sehr beliebt.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <span>5.0/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-3.jpg" alt="Klaus Weber - Taxifahrer" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Klaus Weber</h3>
+                                    <p class="driver-role">Business-Transfer Experte</p>
+                                    <p class="driver-bio">15 Jahre Berufserfahrung. Pünktlich und kennt Frankfurt perfekt.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                                        <span>4.8/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-4.jpg" alt="Raj Patel - Taxifahrer" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Raj Patel</h3>
+                                    <p class="driver-role">Nachtfahrer</p>
+                                    <p class="driver-bio">3 Jahre im Team. Zuverlässig auch in den späten Stunden.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <span>4.9/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-5.jpg" alt="Amina Diallo - Taxifahrerin" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Amina Diallo</h3>
+                                    <p class="driver-role">Krankenfahrt-Spezialistin</p>
+                                    <p class="driver-bio">4 Jahre Erfahrung. Besonders einfühlsam bei Patienten.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <span>5.0/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="driver-card">
+                                <div class="driver-image">
+                                    <img src="images/driver-6.jpg" alt="Nikos Papadopoulos - Taxifahrer" loading="lazy">
+                                </div>
+                                <div class="driver-content">
+                                    <h3 class="driver-name">Nikos Papadopoulos</h3>
+                                    <p class="driver-role">Shuttle-Fahrer</p>
+                                    <p class="driver-bio">10 Jahre Erfahrung. Perfekt für Gruppenfahrten und Events.</p>
+                                    <div class="driver-rating">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                                        <span>4.7/5</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <button class="drivers-slider-btn drivers-next" id="driversNext" aria-label="Nächste Fahrer">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="drivers-dots" id="driversDots">
+                    <button class="drivers-dot active" data-slide="0" aria-label="Fahrer 1-3"></button>
+                    <button class="drivers-dot" data-slide="1" aria-label="Fahrer 4-6"></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-badge">
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                        Kundenstimmen
+                    </span>
+                    <h2 class="section-title" id="testimonials-title">
+                        Das sagen unsere <span class="text-highlight">Kunden</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Über 2.500 zufriedene Fahrgäste vertrauen auf AMM Taxi Frankfurt.
+                    </p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <article class="testimonial-card" data-animate="fade-up" data-delay="0">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Seit meiner Chemotherapie fährt mich AMM Taxi dreimal pro Woche ins Krankenhaus. 
+                            Die Fahrer sind immer pünktlich, freundlich und sehr geduldig. Ein absolut verlässlicher Service!"
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <span>M</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <strong>Maria Schmidt</strong>
+                                <span>Krankenfahrt-Kundin</span>
+                            </div>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card" data-animate="fade-up" data-delay="100">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Ich nutze AMM Taxi regelmäßig für Geschäftsfahrten zum Flughafen. 
+                            Die Professionalität und Pünktlichkeit ist erstklassig. Die Fahrzeuge sind immer tip-top sauber."
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <span>T</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <strong>Thomas Weber</strong>
+                                <span>Geschäftskunde</span>
+                            </div>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card" data-animate="fade-up" data-delay="200">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Mein Sohn mit besonderem Förderbedarf wird jeden Tag zur Schule gefahren. 
+                            Die Fahrer sind unglaublich einfühlsam und professionell. Ich kann AMM Taxi nur empfehlen!"
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <span>S</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <strong>Sabine Müller</strong>
+                                <span>Mutter</span>
+                            </div>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card" data-animate="fade-up" data-delay="300">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Mit 82 Jahren bin ich auf den Fahrdienst angewiesen. Die Mitarbeiter helfen mir 
+                            beim Ein- und Aussteigen und sind immer höflich. Wie bei der eigenen Familie!"
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <span>H</span>
+                            </div>
+                            <div class="testimonial-info">
+                                <strong>Hans-Dieter Klein</strong>
+                                <span>Seniorenkunde</span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+                
+                <div class="testimonials-summary" data-animate="fade-up">
+                    <div class="summary-item">
+                        <span class="summary-number">4.9</span>
+                        <span class="summary-label">Google Bewertung</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-number">2.500+</span>
+                        <span class="summary-label">Zufriedene Kunden</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-number">98%</span>
+                        <span class="summary-label">Empfehlungsrate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Area / Frankfurt Map Section -->
+        <section class="map-section" id="einsatzgebiet" aria-labelledby="map-title">
+            <div class="container">
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-badge">
+                        <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                        Einsatzgebiet
+                    </span>
+                    <h2 class="section-title" id="map-title">
+                        Wo wir für Sie <span class="text-highlight">unterwegs</span> sind
+                    </h2>
+                    <p class="section-subtitle">
+                        Wir fahren in ganz Frankfurt und im Umkreis von +5 km.
+                    </p>
+                </div>
+                
+                <div class="map-wrapper" data-animate="fade-up">
+                    <div class="map-container">
+                        <div id="frankfurtMap" class="frankfurt-map"></div>
+                    </div>
+                    
+                    <div class="stadtteile-container">
+                        <h3>Unsere Stadtteile</h3>
+                        <div class="stadtteile-grid">
+                            <span class="stadtteil-chip" data-stadtteil="Innenstadt">Innenstadt</span>
+                            <span class="stadtteil-chip" data-stadtteil="Westend">Westend</span>
+                            <span class="stadtteil-chip" data-stadtteil="Nordend">Nordend</span>
+                            <span class="stadtteil-chip" data-stadtteil="Bahnhofsviertel">Bahnhofsviertel</span>
+                            <span class="stadtteil-chip" data-stadtteil="Sachsenhausen">Sachsenhausen</span>
+                            <span class="stadtteil-chip" data-stadtteil="Bornheim">Bornheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Bockenheim">Bockenheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Ostend">Ostend</span>
+                            <span class="stadtteil-chip" data-stadtteil="Gallus">Gallus</span>
+                            <span class="stadtteil-chip" data-stadtteil="Höchst">Höchst</span>
+                            <span class="stadtteil-chip" data-stadtteil="Niederrad">Niederrad</span>
+                            <span class="stadtteil-chip" data-stadtteil="Griesheim">Griesheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Praunheim">Praunheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Rödelheim">Rödelheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Kalbach">Kalbach</span>
+                            <span class="stadtteil-chip" data-stadtteil="Bergen-Enkheim">Bergen-Enkheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Fechenheim">Fechenheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Seckbach">Seckbach</span>
+                            <span class="stadtteil-chip" data-stadtteil="Riederwald">Riederwald</span>
+                            <span class="stadtteil-chip" data-stadtteil="Nied">Nied</span>
+                            <span class="stadtteil-chip" data-stadtteil="Hausen">Hausen</span>
+                            <span class="stadtteil-chip" data-stadtteil="Goldstein">Goldstein</span>
+                            <span class="stadtteil-chip" data-stadtteil="Sindlingen">Sindlingen</span>
+                            <span class="stadtteil-chip" data-stadtteil="Zeilsheim">Zeilsheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Sossenheim">Sossenheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Unterliederbach">Unterliederbach</span>
+                            <span class="stadtteil-chip" data-stadtteil="Schwanheim">Schwanheim</span>
+                            <span class="stadtteil-chip" data-stadtteil="Flughafen">Flughafen</span>
+                            <span class="stadtteil-chip" data-stadtteil="Niederursel">Niederursel</span>
+                            <span class="stadtteil-chip" data-stadtteil="Heddernheim">Heddernheim</span>
+                        </div>
+                        <p class="stadtteile-note">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            Auch Umland (+5 km) auf Anfrage
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-animate="fade-right">
+                        <span class="section-badge">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                            Kontakt
+                        </span>
+                        <h2 class="section-title" id="contact-title">
+                            Wir sind für Sie <span class="text-highlight">da</span>
+                        </h2>
+                        <p class="section-text">
+                            Haben Sie Fragen oder möchten Sie eine Fahrt buchen? 
+                            Rufen Sie uns an oder schreiben Sie uns – wir helfen Ihnen gerne!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+496990470845" class="contact-method">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-method-content">
+                                    <span class="contact-method-label">Telefon</span>
+                                    <span class="contact-method-value">+49 69 90 47 08 45</span>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:info@amm-taxi.de" class="contact-method">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-method-content">
+                                    <span class="contact-method-label">E-Mail</span>
+                                    <span class="contact-method-value">info@amm-taxi.de</span>
+                                </div>
+                            </a>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-method-content">
+                                    <span class="contact-method-label">Adresse</span>
+                                    <span class="contact-method-value">Bornheimer Landwehr 36<br>60385 Frankfurt am Main</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-method-content">
+                                    <span class="contact-method-label">Bürozeiten</span>
+                                    <span class="contact-method-value">Mo-Fr: 07:00-21:00<br>Sa-So: 08:00-18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <span>Folgen Sie uns:</span>
+                            <a href="https://www.facebook.com/people/AMM-Taxi-Frankfurt-GmbH/100067061406682/" target="_blank" rel="noopener noreferrer" aria-label="AMM Taxi auf Facebook">
+                                <i class="fab fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper" data-animate="fade-left">
+                        <form class="contact-form" id="contactForm" action="contact.php" method="POST">
+                            <h3 class="contact-form-title">Nachricht senden</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">Ihr Name</label>
+                                    <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">E-Mail</label>
+                                    <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-phone" class="form-label">Telefon (optional)</label>
+                                <input type="tel" id="contact-phone" name="phone" class="form-input" autocomplete="tel">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Betreff</label>
+                                <select id="contact-subject" name="subject" class="form-select">
+                                    <option value="">Bitte wählen</option>
+                                    <option value="booking">Fahrt buchen</option>
+                                    <option value="medical">Krankenfahrt</option>
+                                    <option value="school">Schultransport</option>
+                                    <option value="business">Business</option>
+                                    <option value="other">Sonstiges</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">Ihre Nachricht</label>
+                                <textarea id="contact-message" name="message" class="form-textarea" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                Nachricht senden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">
+                            <img src="images/logo.png" alt="AMM Taxi Frankfurt Logo" class="footer-logo-img">
+                        </a>
+                        <p class="footer-text">
+                            Ihr zuverlässiger Partner für Fahrten aller Art 
+                            im Rhein-Main-Gebiet. Seit 1982 mit Herz unterwegs.
+                        </p>
+                        <a href="tel:+496990470845" class="footer-phone">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            +49 69 90 47 08 45
+                        </a>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <h4 class="footer-title">Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Leistungen</a></li>
+                            <li><a href="#about">Über uns</a></li>
+                            <li><a href="#order">Taxi bestellen</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <h4 class="footer-title">Leistungen</h4>
+                        <ul>
+                            <li><a href="#services">Krankenfahrten</a></li>
+                            <li><a href="#services">Schulkinder</a></li>
+                            <li><a href="#services">Business</a></li>
+                            <li><a href="#services">Tagespflege</a></li>
+                            <li><a href="#services">Shuttle</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <h4 class="footer-title">Rechtliches</h4>
+                        <ul>
+                            <li><a href="impressum.php">Impressum</a></li>
+                            <li><a href="datenschutz.php">Datenschutz</a></li>
+                            <li><a href="agb.php">AGB</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <?php echo date('Y'); ?> A.M.M. Taxi Frankfurt GmbH. Alle Rechte vorbehalten.</p>
+                <p class="footer-partner">
+                    Partner: <a href="https://www.fahrdienst-rumpf.de/" target="_blank" rel="noopener noreferrer">Rollstuhlbeförderung Rumpf</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Buttons (WhatsApp + Phone) -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/496990470845" class="floating-btn floating-whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="floating-btn-text">WhatsApp</span>
+        </a>
+        <a href="tel:+496990470845" class="floating-btn floating-phone" aria-label="Jetzt anrufen">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span class="floating-btn-text">Anrufen</span>
+        </a>
+    </div>
+    
+    <!-- Leaflet Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
